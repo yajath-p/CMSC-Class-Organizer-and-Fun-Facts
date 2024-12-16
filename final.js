@@ -83,7 +83,7 @@ app.post("/submit-class", async (request, response) => {
 });
 
 app.post("/search-class", async (request, response) => {
-  const { email } = request.body;
+  const { code } = request.body;
   const client = new MongoClient(uri, { serverApi: ServerApiVersion.v1 });
 
   try {
@@ -96,7 +96,7 @@ app.post("/search-class", async (request, response) => {
     const result = await client
       .db(databaseAndCollection.db_name)
       .collection(databaseAndCollection.db_collection)
-      .findOne({ email: email });
+      .findOne({ code: code });
 
     if (result) {
       response.render("processAdd", {
@@ -112,10 +112,11 @@ app.post("/search-class", async (request, response) => {
         code: "NONE",
         credit: "NONE",
         description: "NONE",
+        facts: facts,
       });
     }
   } catch (e) {
-    console.log("No data found with ${email}");
+    console.log("No data found with code");
   } finally {
     await client.close();
   }
