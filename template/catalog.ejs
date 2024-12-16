@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: red;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: red;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9fb;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 1rem;
+            text-decoration: none;
+            color: red;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: red;
+            color: white;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Display All Courses</h1>
+    </header>
+
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Course Code</th>
+                    <th>Course Name</th>
+                    <th>Credits</th>
+                    <th>Course Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% courses.forEach(function(course) { %>
+                    <tr>
+                        <td><%= course.code %></td>
+                        <td><%= course.name %></td>
+                        <td><%= course.credit %></td>
+                        <td><%= course.description %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+        <a href="/">&#8592; Back to Home</a>
+    </main>
+
+    <footer>
+    <div id="api-result">
+      <p>Random Facts: <%= facts %></p> 
+    </footer>
+</body>
+
+</html>

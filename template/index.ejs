@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>UMD CS Classes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: red;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            margin: 1.5rem 0;
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: black;
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 0.5rem 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: red;
+            color: white;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>UMD CS Class Catalog</h1>
+    </header>
+
+    <main>
+        <div class="section">
+            <h2>Manage Classes</h2>
+            <ul>
+                <li><a href="/add">Add a Class</a></li>
+                <li><a href="/catalog">View Catalog</a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Search and Remove</h2>
+            <ul>
+                <li><a href="/search">Search for a Class</a></li>
+                <li><a href="/remove">Remove a Class</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+    <div id="api-result">
+      <p>Random Facts: <%= facts %></p> 
+    </div>
+    </footer>
+</body>
+
+</html>
